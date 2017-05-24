@@ -15,13 +15,14 @@ title: Carroll Tree Work
 			crossorigin="anonymous"></script>
  <style>
 	 #map{ height: 100% }
-	</style>
+ </style>
 </head>
 <body>
- <div id="map"> </div>
+ <div id="map"></div>
  <script type="application/javascript">
  var map = L.map('map').setView([28.48240,-81.53046], 18);
- L.tileLayer('https://api.mapbox.com/styles/v1/valerietheblonde/cj330pb6k00002rl2psfia0ol.html?title=true&access_token=pk.eyJ1IjoidmFsZXJpZXRoZWJsb25kZSIsImEiOiJjaW1paXRmb2UwMGNqdmZrdXRkbDRoYjViIn0.imis0dZXt4rNR1Vh6VaJoA#0.6/-0.000000/0.000000/0', {
+ L.tileLayer('https://api.mapbox.com/styles/v1/valerietheblonde/cj330pb6k00002rl2psfia0ol.html?title=true&access_token=pk.eyJ1IjoidmFsZXJpZXRoZWJsb25kZSIsImEiOiJjaW1paXRmb2UwMGNqdmZrdXRkbDRoYjViIn0.imis0dZXt4rNR1Vh6VaJoA#0.6/-0.000000/0.000000/0', 
+   {
   	maxZoom: 19,
 	minZoom: 16
 	id: 'Satellite'
@@ -33,7 +34,7 @@ function addDataToMap(data, map) {
 	  var popupText = "Tree Species: " + feature.properties.species;
  	  layer.bindPopup(popupText); }
   	});
-  dataLayer.addTo(mapid);
+  dataLayer.addTo(map);
 }
 
 $.getJSON("https://web.fulcrumapp.com/shares/a09947ba8276e05a.geojson", function(data) { addDataToMap(data, mapid); });
