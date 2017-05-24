@@ -10,6 +10,9 @@
  <script src="https://code.jquery.com/jquery-3.2.1.js"
 			integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 			crossorigin="anonymous"></script>
+ <script src="carroll.geojson" type="text/javascript"></script>
+ <script src="carroll_monitoring.geojson" type="text/javascript"></script>
+ <script src="carroll_pruning.geojson" type="text/javascript"></script>
  <style>
 	 #map{ position:absolute; top:0; bottom:0; width: 99%; }
  </style>
@@ -28,9 +31,9 @@
 	minZoom: 17, });
 	
  map.addLayer(satelliteTiles)
- $.getJSON('carroll.geojson', function(geojson) {
- var geojsonLayer = L.geoJSON(geojsonFeature).addTo(map);
-	   });
+ var carroll = new L.LayerGroup();
+ L.geoJson(carroll, .addto(carroll);
+ L.geoJson(carroll, .addto(carroll);
 //function addDataToMap(data, map) {
   //var dataLayer = L.geoJson(data);
 	//onEachFeature: function(feature, layer) {
