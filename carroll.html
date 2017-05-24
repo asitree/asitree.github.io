@@ -31,9 +31,10 @@
 	minZoom: 17, });
 	
  map.addLayer(satelliteTiles)
- var carroll = new L.LayerGroup();
- L.geoJson(carroll, .addto(carroll);
- L.geoJson(carroll, .addto(carroll);
+ var carroll_trees = new L.LayerGroup();
+ L.geoJson(carroll).addto(carroll_trees);
+ L.geoJson(carroll_monitoring).addto(carroll_trees);
+ L.geoJson(carroll_pruning).addto(carroll_trees);
 //function addDataToMap(data, map) {
   //var dataLayer = L.geoJson(data);
 	//onEachFeature: function(feature, layer) {
