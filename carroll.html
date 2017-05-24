@@ -28,9 +28,9 @@
 	minZoom: 17, });
 	
  map.addLayer(satelliteTiles)
- map.addLayer(geojsonLayer)
  $.getJSON('carroll.geojson', function(geojson)
  var geojsonLayer = L.geoJSON(geojsonFeature).addTo(map);
+	   });
 //function addDataToMap(data, map) {
   //var dataLayer = L.geoJson(data);
 	//onEachFeature: function(feature, layer) {
