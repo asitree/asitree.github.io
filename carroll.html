@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
@@ -9,8 +10,9 @@
  <script src="https://code.jquery.com/jquery-3.2.1.js"
 			integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 			crossorigin="anonymous"></script>
+ <script src="leaflet.ajax.min" type="application/javascript"></script>
  <style>
-	 #map{ position:absolute; top:0; bottom:0; width: 90%; }
+	 #map{ position:absolute; top:0; bottom:0; width: 99%; }
  </style>
 </head>
 <body>
@@ -18,15 +20,17 @@
  <script type="application/javascript">
  var satelliteTiles = L.tileLayer('https://api.mapbox.com/styles/v1/valerietheblonde/cj330pb6k00002rl2psfia0ol/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmFsZXJpZXRoZWJsb25kZSIsImEiOiJjaW1paXRmb2UwMGNqdmZrdXRkbDRoYjViIn0.imis0dZXt4rNR1Vh6VaJoA', 
 		);
- var credits = L.control.attribution().addTo(map);
- 	credits.addAttribution('© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/feedback/" target="_blank">Improve this map</a> © <a href="https://www.digitalglobe.com/"><DigitalGlobe</a></strong>');
- var map = L.map('map')
-	.addLayer(satelliteTiles)
- 	.setView([28.48240,-81.53046], 18);
+// var credits = L.control.attribution().addTo(map);
+// credits.addAttribution('© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/feedback/" target="_blank">Improve this map</a></strong>');
+var map = L.map('map', {
+	center:[28.48240,-81.53046],
+	zoom:18, 
+	minZoom: 17, });
+	
+map.addLayer(satelliteTiles)
  //L.tileLayer('https://api.mapbox.com/styles/v1/valerietheblonde/cj330pb6k00002rl2psfia0ol.html?title=true&access_token=pk.eyJ1IjoidmFsZXJpZXRoZWJsb25kZSIsImEiOiJjaW1paXRmb2UwMGNqdmZrdXRkbDRoYjViIn0.imis0dZXt4rNR1Vh6VaJoA#0.6/-0.000000/0.000000/0', 
    //{
-  	//maxZoom: 19,
-	//minZoom: 16
+ 
 	//id: 'Satellite'
   	//accessToken 'pk.eyJ1IjoidmFsZXJpZXRoZWJsb25kZSIsImEiOiJjaW1paXRmb2UwMGNqdmZrdXRkbDRoYjViIn0.imis0dZXt4rNR1Vh6VaJoA'
 	//}).addTo(map);
@@ -39,7 +43,6 @@
   //	});
 //  dataLayer.addTo(map);
 //}
-
 //$.getJSON("https://web.fulcrumapp.com/shares/a09947ba8276e05a.geojson", function(data) { addDataToMap(data, mapid); });
 </script>
 </body>
