@@ -15,7 +15,8 @@ title: Carroll Tree Work
 			crossorigin="anonymous"></script>
 </head>
 <body>
-<div id="mapid"></div>
+<div id="mapid" style="width: 100%; height: 300px;"></div>
+<script type="application/javascript">
  var mymap = L.map('mapid').setView([28.48240,-81.53046], 18);
  L.tileLayer('https://api.mapbox.com/styles/v1/valerietheblonde/cj330pb6k00002rl2psfia0ol.html?title=true&access_token=pk.eyJ1IjoidmFsZXJpZXRoZWJsb25kZSIsImEiOiJjaW1paXRmb2UwMGNqdmZrdXRkbDRoYjViIn0.imis0dZXt4rNR1Vh6VaJoA#0.6/-0.000000/0.000000/0', {
   maxZoom: 19,
@@ -32,4 +33,6 @@ function addDataToMap(data, mapid) {
 }
 
 $.getJSON("https://web.fulcrumapp.com/shares/a09947ba8276e05a.geojson", function(data) { addDataToMap(data, mapid); });
-	</body>
+</script>
+</body>
+</html>
