@@ -20,15 +20,16 @@
  <script type="application/javascript">
  var satelliteTiles = L.tileLayer('https://api.mapbox.com/styles/v1/valerietheblonde/cj330pb6k00002rl2psfia0ol/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmFsZXJpZXRoZWJsb25kZSIsImEiOiJjaW1paXRmb2UwMGNqdmZrdXRkbDRoYjViIn0.imis0dZXt4rNR1Vh6VaJoA', 
 		);
+ var geojsonLayer = new L.GeoJSON.AJAX("https://web.fulcrumapp.com/shares/a09947ba8276e05a.geojson")
 // var credits = L.control.attribution().addTo(map);
 // credits.addAttribution('© <a href="https://www.mapbox.com/feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/feedback/" target="_blank">Improve this map</a></strong>');
-var map = L.map('map', {
+ var map = L.map('map', {
 	center:[28.48240,-81.53046],
 	zoom:18, 
 	minZoom: 17, });
 	
-map.addLayer(satelliteTiles)
-var geojsonLayer = new L.GeoJSON.AJAX("https://web.fulcrumapp.com/shares/a09947ba8276e05a.geojson")
+ map.addLayer(satelliteTiles)
+ map.addLayer(geojsonLayer)
 //function addDataToMap(data, map) {
   //var dataLayer = L.geoJson(data);
 	//onEachFeature: function(feature, layer) {
