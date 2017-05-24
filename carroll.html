@@ -10,7 +10,7 @@
 			integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 			crossorigin="anonymous"></script>
  <style>
-	 #map{ position:absolute; top:0; bottom:0; width: 100%; }
+	 #map{ position:absolute; top:0; bottom:0; width: 90%; }
  </style>
 </head>
 <body>
@@ -29,16 +29,16 @@
   	//accessToken 'pk.eyJ1IjoidmFsZXJpZXRoZWJsb25kZSIsImEiOiJjaW1paXRmb2UwMGNqdmZrdXRkbDRoYjViIn0.imis0dZXt4rNR1Vh6VaJoA'
 	//}).addTo(map);
 	//     ).addTo(map);
-//function addDataToMap(data, map) {
-//  var dataLayer = L.geoJson(data);
-//	onEachFeature: function(feature, layer) {
-//	  var popupText = "Tree Species: " + feature.properties.species;
- //	  layer.bindPopup(popupText); }
- // 	});
-//  dataLayer.addTo(map);
-//}
+function addDataToMap(data, map) {
+  var dataLayer = L.geoJson(data);
+	onEachFeature: function(feature, layer) {
+	  var popupText = "Tree Species: " + feature.properties.species;
+ 	  layer.bindPopup(popupText); }
+  	});
+  dataLayer.addTo(map);
+}
 
-//$.getJSON("https://web.fulcrumapp.com/shares/a09947ba8276e05a.geojson", function(data) { addDataToMap(data, mapid); });
+$.getJSON("https://web.fulcrumapp.com/shares/a09947ba8276e05a.geojson", function(data) { addDataToMap(data, mapid); });
 </script>
 </body>
 </html>
